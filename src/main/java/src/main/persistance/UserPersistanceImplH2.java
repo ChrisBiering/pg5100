@@ -22,7 +22,6 @@ public class UserPersistanceImplH2 implements UserPersistence {
     }
 
     public void updateUser(int userId, String newEmail) {
-
     }
 
     public User getUser(int userId) {
