@@ -5,7 +5,7 @@ import src.main.model.UserType;
 
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
-import java.util.*;
+import java.util.ArrayList;
 
 /**
  * Created by Chris on 05/10/15.
@@ -19,10 +19,9 @@ public class UserPersistanceImplInMemory implements UserPersistence {
     @Inject
     public UserPersistanceImplInMemory() {}
 
-    public User createUser(String email, String password, UserType userType) {
+    public void createUser(String email, String password, UserType userType) {
         User user = new User(email, password, userType);
         allUsers.add(user);
-        return user;
     }
 
     public void updateUser(int userId, String newEmail) {
@@ -41,4 +40,6 @@ public class UserPersistanceImplInMemory implements UserPersistence {
     public void deleteUser(int userId) {
         allUsers.remove(userId);
     }
+
+    public void setup() {}
 }

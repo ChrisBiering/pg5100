@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public interface UserPersistence {
 
-    User createUser(String email, String password, UserType userType);
+    void createUser(String email, String password, UserType userType);
 
     void updateUser(int userId, String newEmail);
 
@@ -19,5 +19,7 @@ public interface UserPersistence {
     ArrayList<User> getUsers();
 
     void deleteUser(int userId);
+
+    void setup();
 
 }

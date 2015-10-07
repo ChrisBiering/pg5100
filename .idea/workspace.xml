@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f629f8b6-6ebb-4cb5-ade7-78251cbc43ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/src/main/service/MainService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/src/main/model/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplInMemory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistence.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/src/main/model/UserType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/simplelogger.properties" />
+    <list default="true" id="f629f8b6-6ebb-4cb5-ade7-78251cbc43ba" name="Default" comment="Testing Git form within IntelliJ">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/src/main/persistance/DBHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/src/main/service/MainService.java" afterPath="$PROJECT_DIR$/src/main/java/src/main/service/MainService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java" afterPath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplInMemory.java" afterPath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplInMemory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistence.java" afterPath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="enterprise_project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,16 +33,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/src/main/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -69,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistence.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,11 +71,34 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <caret line="91" column="40" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#441#442#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
+                <element signature="e#2218#2224#0" expanded="true" />
+                <marker date="1444231071000" expanded="true" signature="1007:1052" placeholder="INSERT INTO ..." />
+                <marker date="1444231071000" expanded="true" signature="1007:1098" placeholder="INSERT INTO ..." />
+                <marker date="1444231071000" expanded="true" signature="1007:1165" placeholder="INSERT INTO ..." />
+                <marker date="1444231071000" expanded="true" signature="1446:1496" placeholder="UPDATE users..." />
+                <marker date="1444231071000" expanded="true" signature="1446:1513" placeholder="UPDATE users..." />
+                <marker date="1444231071000" expanded="true" signature="1446:1548" placeholder="UPDATE users..." />
+                <marker date="1444231071000" expanded="true" signature="1446:1549" placeholder="UPDATE users..." />
+                <marker date="1444231071000" expanded="true" signature="1859:1889" placeholder="SELECT * FRO..users..." />
+                <marker date="1444231071000" expanded="true" signature="1859:1890" placeholder="SELECT * FRO..users..." />
+                <marker date="1444231071000" expanded="true" signature="2376:2395" placeholder="SELECT * FRO..users..." />
+                <marker date="1444231071000" expanded="true" signature="2857:2885" placeholder="DELETE FROM ..." />
+                <marker date="1444231071000" expanded="true" signature="2857:2886" placeholder="DELETE FROM ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/DBHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,16 +108,16 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplInMemory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#355#361#0" expanded="true" />
-                <element signature="e#791#792#0" expanded="true" />
-                <element signature="e#834#835#0" expanded="true" />
-                <element signature="e#875#876#0" expanded="true" />
-                <element signature="e#906#907#0" expanded="true" />
-                <element signature="e#948#949#0" expanded="true" />
-                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#770#771#0" expanded="true" />
+                <element signature="e#813#814#0" expanded="true" />
+                <element signature="e#854#855#0" expanded="true" />
+                <element signature="e#885#886#0" expanded="true" />
+                <element signature="e#927#928#0" expanded="true" />
+                <element signature="e#966#967#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,8 +126,8 @@
       <file leaf-file-name="MainService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/src/main/service/MainService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37078652">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.35955057">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#501#502#0" expanded="true" />
@@ -128,17 +141,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/beans.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/src/main/model/UserType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -165,17 +168,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/src/main/resource/simplelogger.properties" />
         <option value="$PROJECT_DIR$/src/main/java/src/main/model/UserType.java" />
         <option value="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistance.java" />
         <option value="$PROJECT_DIR$/src/main/java/src/main/model/Bruker.java" />
         <option value="$PROJECT_DIR$/src/main/java/src/main/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplInMemory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistence.java" />
-        <option value="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/src/main/service/MainService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/src/main/persistance/DBHandler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistence.java" />
+        <option value="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplInMemory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/src/main/service/MainService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java" />
       </list>
     </option>
   </component>
@@ -203,6 +207,34 @@
     <option name="y" value="23" />
     <option name="width" value="1276" />
     <option name="height" value="774" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Cucumber</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Portability issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>TodoComment</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -256,6 +288,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -334,6 +370,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -419,14 +459,14 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pg5100/2_3-cdi-alternatives" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pg5100/2_8-cdi-demo" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -763,6 +803,12 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Testing Git form within IntelliJ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing Git form within IntelliJ" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -824,8 +870,19 @@
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#2218#2224#0" expanded="true" />
+            <marker date="1444231071000" expanded="true" signature="1007:1052" placeholder="INSERT INTO ..." />
+            <marker date="1444231071000" expanded="true" signature="1007:1098" placeholder="INSERT INTO ..." />
+            <marker date="1444231071000" expanded="true" signature="1007:1165" placeholder="INSERT INTO ..." />
+            <marker date="1444231071000" expanded="true" signature="1446:1496" placeholder="UPDATE users..." />
+            <marker date="1444231071000" expanded="true" signature="1446:1513" placeholder="UPDATE users..." />
+            <marker date="1444231071000" expanded="true" signature="1446:1548" placeholder="UPDATE users..." />
+            <marker date="1444231071000" expanded="true" signature="1446:1549" placeholder="UPDATE users..." />
+            <marker date="1444231071000" expanded="true" signature="1859:1889" placeholder="SELECT * FRO..users..." />
+            <marker date="1444231071000" expanded="true" signature="1859:1890" placeholder="SELECT * FRO..users..." />
+            <marker date="1444231071000" expanded="true" signature="2376:2395" placeholder="SELECT * FRO..users..." />
+            <marker date="1444231071000" expanded="true" signature="2857:2885" placeholder="DELETE FROM ..." />
+            <marker date="1444231071000" expanded="true" signature="2857:2886" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
@@ -837,12 +894,12 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#355#361#0" expanded="true" />
-            <element signature="e#791#792#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
-            <element signature="e#906#907#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#813#814#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+            <element signature="e#927#928#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -899,10 +956,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/java/sql/Statement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0067415">
+          <caret line="353" column="12" selection-start-line="353" selection-start-column="12" selection-end-line="353" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/src.zip!/javax/sql/DataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23146068">
+          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/DBHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.011236">
+          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -927,24 +1010,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistence.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/beans.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#441#442#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -952,32 +1031,47 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplInMemory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#355#361#0" expanded="true" />
-            <element signature="e#791#792#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
-            <element signature="e#906#907#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#813#814#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+            <element signature="e#885#886#0" expanded="true" />
+            <element signature="e#927#928#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/beans.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
+          <caret line="91" column="40" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2218#2224#0" expanded="true" />
+            <marker date="1444231071000" expanded="true" signature="1007:1052" placeholder="INSERT INTO ..." />
+            <marker date="1444231071000" expanded="true" signature="1007:1098" placeholder="INSERT INTO ..." />
+            <marker date="1444231071000" expanded="true" signature="1007:1165" placeholder="INSERT INTO ..." />
+            <marker date="1444231071000" expanded="true" signature="1446:1496" placeholder="UPDATE users..." />
+            <marker date="1444231071000" expanded="true" signature="1446:1513" placeholder="UPDATE users..." />
+            <marker date="1444231071000" expanded="true" signature="1446:1548" placeholder="UPDATE users..." />
+            <marker date="1444231071000" expanded="true" signature="1446:1549" placeholder="UPDATE users..." />
+            <marker date="1444231071000" expanded="true" signature="1859:1889" placeholder="SELECT * FRO..users..." />
+            <marker date="1444231071000" expanded="true" signature="1859:1890" placeholder="SELECT * FRO..users..." />
+            <marker date="1444231071000" expanded="true" signature="2376:2395" placeholder="SELECT * FRO..users..." />
+            <marker date="1444231071000" expanded="true" signature="2857:2885" placeholder="DELETE FROM ..." />
+            <marker date="1444231071000" expanded="true" signature="2857:2886" placeholder="DELETE FROM ..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/src/main/service/MainService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37078652">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.35955057">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#501#502#0" expanded="true" />

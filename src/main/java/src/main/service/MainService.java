@@ -23,6 +23,7 @@ public class MainService {
     }
 
     private void callService() {
+        persistanceImpl.setup();
         persistanceImpl.createUser("abc@gmail.com", "pw", UserType.Student);
         ArrayList<User> users = persistanceImpl.getUsers();
 
@@ -30,6 +31,7 @@ public class MainService {
             System.out.println(user.getEmail());
         }
     }
+
 
     public static void main(String[] args) {
         WeldContainer container = new Weld().initialize();
