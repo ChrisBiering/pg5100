@@ -3,6 +3,7 @@ package src.main.persistance;
 import src.main.model.User;
 import src.main.model.UserType;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 import java.util.ArrayList;
@@ -14,14 +15,20 @@ import java.util.ArrayList;
 @Alternative
 public class UserPersistanceImplInMemory implements UserPersistence {
 
-    ArrayList<User> allUsers = new ArrayList<User>();
+    ArrayList<User> allUsers;
 
     @Inject
     public UserPersistanceImplInMemory() {}
 
-    public void createUser(String email, String password, UserType userType) {
+    @PostConstruct
+    public void setup() {
+        allUsers = new ArrayList<User>();
+    }
+
+    public User createUser(String email, String password, UserType userType) {
         User user = new User(email, password, userType);
         allUsers.add(user);
+        return user;
     }
 
     public void updateUser(int userId, String newEmail) {
@@ -37,9 +44,8 @@ public class UserPersistanceImplInMemory implements UserPersistence {
         return allUsers;
     }
 
-    public void deleteUser(int userId) {
+    public boolean deleteUser(int userId) {
         allUsers.remove(userId);
+        return !allUsers.contains(getUser(userId));
     }
-
-    public void setup() {}
 }

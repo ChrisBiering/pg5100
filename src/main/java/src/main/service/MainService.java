@@ -2,13 +2,10 @@ package src.main.service;
 
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
-import src.main.model.User;
-import src.main.model.UserType;
 import src.main.persistance.UserPersistence;
 
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
-import java.util.ArrayList;
 
 /**
  * Created by Chris on 06/10/15.
@@ -23,13 +20,7 @@ public class MainService {
     }
 
     private void callService() {
-        persistanceImpl.setup();
-        persistanceImpl.createUser("abc@gmail.com", "pw", UserType.Student);
-        ArrayList<User> users = persistanceImpl.getUsers();
 
-        for(User user : users) {
-            System.out.println(user.getEmail());
-        }
     }
 
 

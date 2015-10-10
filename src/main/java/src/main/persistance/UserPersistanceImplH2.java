@@ -5,11 +5,11 @@ import src.main.model.UserType;
 
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
+import java.util.List;
 
 /**
  * Created by Chris on 05/10/15.
@@ -18,84 +18,52 @@ import java.util.ArrayList;
 @Alternative
 public class UserPersistanceImplH2 implements UserPersistence {
 
-    @Inject
-    DBHandler dbHandler;
-    Connection connection;
+    private EntityManagerFactory entityManagerFactory;
 
     @Inject
-    public UserPersistanceImplH2() {}
-
-    public void setup()  {
-        try {
-            connection = dbHandler.createConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+    public UserPersistanceImplH2() {
+        entityManagerFactory = Persistence.createEntityManagerFactory("persistenceUnit");
     }
 
-    public void createUser(String email, String password, UserType userType) {
-        Statement statement;
-        try {
-            statement = connection.createStatement();
-            statement.execute("INSERT INTO users (EMAIL, PASSWORD, USERTYPE)" +
-                                " VALUES ('" + email + "', '" + password + "', '" + userType.toString() + "')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void updateUser(int userId, String newEmail) {
-        Statement statement;
-        try {
-            statement = connection.createStatement();
-            statement.executeUpdate("UPDATE users" +
-                    "SET EMAIL = '" + newEmail + "'" +
-                    "WHERE ID = " + userId);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public User getUser(int userId) {
-        Statement statement;
-        User user = null;
-        try {
-            statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM users WHERE ID = " + userId);
-
-            user = new User(rs.getString("EMAIL"), rs.getString("PASSWORD"), UserType.valueOf(rs.getString("USERTYPE")));
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public User createUser(String email, String password, UserType userType) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        User user = new User(email, password, userType);
+        entityManager.persist(user);
+        entityManager.getTransaction().commit();
+        entityManager.close();
         return user;
     }
 
-    public ArrayList<User> getUsers() {
-        ArrayList<User> users = new ArrayList<User>();
-        Statement statement;
-        try {
-            statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM users");
-
-            while(rs.next()) {
-                users.add(new User(rs.getString("EMAIL"), rs.getString("PASSWORD"), UserType.valueOf(rs.getString("USERTYPE"))));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return users;
+    public void updateUser(int userId, String newEmail) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        User user = entityManager.find(User.class, userId);
+        entityManager.getTransaction().begin();
+        user.setEmail(newEmail);
+        entityManager.getTransaction().commit();
+        entityManager.close();
     }
 
-    public void deleteUser(int userId) {
-        Statement statement;
-        try {
-            statement = connection.createStatement();
-            statement.executeUpdate("DELETE FROM users WHERE ID = " + userId);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public User getUser(int userId) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        User user = entityManager.find(User.class, userId);
+        entityManager.close();
+        return user;
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<User> getUsers() {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Query query = entityManager.createQuery("SELECT u FROM Users u");
+        return (List<User>)query.getResultList();
+    }
+
+    public boolean deleteUser(int userId) {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.remove(entityManager.contains(getUser(userId)) ? getUser(userId) : entityManager.merge(getUser(userId)));
+        entityManager.getTransaction().commit();
+        entityManager.close();
+        return getUser(userId) == null;
     }
 }

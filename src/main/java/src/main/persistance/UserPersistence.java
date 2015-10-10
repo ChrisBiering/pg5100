@@ -3,23 +3,21 @@ package src.main.persistance;
 import src.main.model.User;
 import src.main.model.UserType;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Chris on 05/10/15.
  */
 public interface UserPersistence {
 
-    void createUser(String email, String password, UserType userType);
+    User createUser(String email, String password, UserType userType);
 
     void updateUser(int userId, String newEmail);
 
     User getUser(int userId);
 
-    ArrayList<User> getUsers();
+    List<User> getUsers();
 
-    void deleteUser(int userId);
-
-    void setup();
+    boolean deleteUser(int userId);
 
 }
