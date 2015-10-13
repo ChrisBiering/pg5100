@@ -2,8 +2,8 @@ package src.main.persistance;
 
 import src.main.model.User;
 import src.main.model.UserType;
+import src.main.persistance.qualifier.H2;
 
-import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,12 +15,12 @@ import java.util.List;
  * Created by Chris on 05/10/15.
  */
 
-@Alternative
+//@Alternative
 public class UserPersistanceImplH2 implements UserPersistence {
 
     private EntityManagerFactory entityManagerFactory;
 
-    @Inject
+    @Inject @H2
     public UserPersistanceImplH2() {
         entityManagerFactory = Persistence.createEntityManagerFactory("persistenceUnit");
     }
