@@ -1,4 +1,4 @@
-# Created by https://www.gitignore.io/api/intellij,java,osx
+# Created by https://www.gitignore.io/api/intellij,java,maven,osx
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
@@ -64,6 +64,18 @@ crashlytics-build.properties
 hs_err_pid*
 
 
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+
 ### OSX ###
 .DS_Store
 .AppleDouble
@@ -90,4 +102,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
