@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f629f8b6-6ebb-4cb5-ade7-78251cbc43ba" name="Default" comment="Removed remaining unused DBHandlers and replaced PostConstruct in InMemoryImpl, putting the code in the constructor instead. Created the IT test for InMemoryImpl">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/src/main/persistance/qualifier/H2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/src/main/service/MainService.java" afterPath="$PROJECT_DIR$/src/main/java/src/main/service/MainService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java" afterPath="$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="f629f8b6-6ebb-4cb5-ade7-78251cbc43ba" name="Default" comment="Added Qualifier option for bean injection. Done with exercise 1">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/src/main/service/MainService.class" afterPath="$PROJECT_DIR$/target/classes/src/main/service/MainService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/src/main/persistance/UserPersistanceImplH2.class" afterPath="$PROJECT_DIR$/target/classes/src/main/persistance/UserPersistanceImplH2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/src/main/persistance/UserPersistanceImplInMemory.class" afterPath="$PROJECT_DIR$/target/classes/src/main/persistance/UserPersistanceImplInMemory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/beans.xml" afterPath="$PROJECT_DIR$/target/classes/META-INF/beans.xml" />
     </list>
     <ignored path="enterprise_project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,10 +57,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,8 +66,8 @@
       <file leaf-file-name="MainService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/src/main/service/MainService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5505618">
-              <caret line="54" column="66" selection-start-line="54" selection-start-column="66" selection-end-line="54" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.53932583">
+              <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
               <folding>
                 <element signature="e#519#520#0" expanded="true" />
                 <element signature="e#573#574#0" expanded="true" />
@@ -919,7 +916,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32907802" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32907802" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -927,7 +924,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23667711" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32907802" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32907802" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -954,7 +951,8 @@
     <MESSAGE value="Implemented EntityManager in UserPersistanceH2Impl. Done with IT for UserPersistanceH2Impl." />
     <MESSAGE value="Removed remaining unused DBHandlers and replaced PostConstruct in InMemoryImpl, putting the code in the constructor instead." />
     <MESSAGE value="Removed remaining unused DBHandlers and replaced PostConstruct in InMemoryImpl, putting the code in the constructor instead. Created the IT test for InMemoryImpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed remaining unused DBHandlers and replaced PostConstruct in InMemoryImpl, putting the code in the constructor instead. Created the IT test for InMemoryImpl" />
+    <MESSAGE value="Added Qualifier option for bean injection. Done with exercise 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Qualifier option for bean injection. Done with exercise 1" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -990,9 +988,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1063,9 +1059,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1146,9 +1140,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1328,17 +1320,15 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/src/main/persistance/UserPersistanceImplH2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/src/main/service/MainService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5505618">
-          <caret line="54" column="66" selection-start-line="54" selection-start-column="66" selection-end-line="54" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.53932583">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding>
             <element signature="e#519#520#0" expanded="true" />
             <element signature="e#573#574#0" expanded="true" />
