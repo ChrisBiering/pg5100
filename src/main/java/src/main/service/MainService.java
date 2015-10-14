@@ -43,7 +43,6 @@ public class MainService {
         for(User user : persistanceImpl.getUsers()) {
             System.out.println(user.toString());
         }
-
     }
 
 

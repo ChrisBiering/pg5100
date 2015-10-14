@@ -32,12 +32,15 @@ public class UserPersistanceImplH2 implements UserPersistence {
 
     @PreDestroy
     public void tearDown() {
-        entityManager.close();
+        closeEntityManagerAndFactory();
     }
 
+    //TODO Find a way to make Interceptor work
     public User createUser(String email, String password, UserType userType) {
+        entityManager.getTransaction().begin();
         User user = new User(email, password, userType);
         entityManager.persist(user);
+        entityManager.getTransaction().commit();
         return user;
     }
 
@@ -57,8 +60,11 @@ public class UserPersistanceImplH2 implements UserPersistence {
         return (List<User>)query.getResultList();
     }
 
+    //TODO Find a way to make Interceptor work
     public boolean deleteUser(int userId) {
+        entityManager.getTransaction().begin();
         entityManager.remove(entityManager.contains(getUser(userId)) ? getUser(userId) : entityManager.merge(getUser(userId)));
+        entityManager.getTransaction().commit();
         return getUser(userId) == null;
     }
 
@@ -70,5 +76,10 @@ public class UserPersistanceImplH2 implements UserPersistence {
         } finally {
             entityManager.getTransaction().commit();
         }
+    }
+
+    public void closeEntityManagerAndFactory() {
+        entityManager.close();
+        entityManagerFactory.close();
     }
 }

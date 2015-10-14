@@ -27,18 +27,19 @@ public class UserPersistanceImplH2IT {
         for(User user : userPersistImpl.getUsers()) {
             userPersistImpl.deleteUser(user.getId());
         }
+        userPersistImpl.closeEntityManagerAndFactory();
     }
 
     @Test
     public void testCreateUser() throws Exception {
-        User testUser = userPersistImpl.createUser("createUser@test.com", "123", UserType.Student);
+        User testUser = userPersistImpl.createUser("createUser@test.com", "Password1", UserType.Student);
         assertNotNull(testUser);
         assertTrue(testUser.getId() > 0);
     }
 
     @Test
     public void testGetUser() throws Exception {
-        User expected = userPersistImpl.createUser("getUser@test.com", "pw", UserType.Student);
+        User expected = userPersistImpl.createUser("getUser@test.com", "Password1", UserType.Student);
         User actual = userPersistImpl.getUser(expected.getId());
         assertEquals(expected, actual);
 
@@ -50,7 +51,7 @@ public class UserPersistanceImplH2IT {
         String oldEmail = "oldEmail@test.com";
         String newEmail = "newEmail@test.com";
 
-        User expected = userPersistImpl.createUser(oldEmail, "pw", UserType.Student);
+        User expected = userPersistImpl.createUser(oldEmail, "Password1", UserType.Student);
         assertEquals(expected.getEmail(), oldEmail);
 
         userPersistImpl.updateUser(expected.getId(), newEmail);
@@ -60,7 +61,7 @@ public class UserPersistanceImplH2IT {
 
     @Test
     public void testGetUsers() throws Exception {
-        User createdUser = userPersistImpl.createUser("getUsers@test.com", "pw", UserType.Teacher);
+        User createdUser = userPersistImpl.createUser("getUsers@test.com", "Password1", UserType.Teacher);
         List<User> users = userPersistImpl.getUsers();
         assertTrue(users.size() > 0);
         assertTrue(users.contains(createdUser));
@@ -68,12 +69,11 @@ public class UserPersistanceImplH2IT {
 
     @Test
     public void testDeleteUser() throws Exception {
-        User user = userPersistImpl.createUser("deleteUsed@test.com", "pw", UserType.Student);
+        User user = userPersistImpl.createUser("deleteUsed@test.com", "Password1", UserType.Student);
         List<User> users = userPersistImpl.getUsers();
         assertTrue(users.size() > 0);
         assertTrue(userPersistImpl.deleteUser(user.getId()));
         users = userPersistImpl.getUsers();
         assertTrue(users.size() == 0);
-
     }
 }
