@@ -49,7 +49,9 @@ public class MainService {
     public static void main(String[] args) {
         WeldContainer container = new Weld().initialize();
         Instance<MainService> main = container.instance().select(MainService.class);
-        main.get().callService();
+        MainService instance = main.get();
+        instance.callService();
+        main.destroy(instance);
     }
 
     static {

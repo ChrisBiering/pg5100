@@ -6,8 +6,7 @@ import src.main.persistance.qualifier.H2;
 
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
-import javax.interceptor.AroundInvoke;
-import javax.interceptor.InvocationContext;
+import javax.interceptor.*;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -68,18 +67,23 @@ public class UserPersistanceImplH2 implements UserPersistence {
         return getUser(userId) == null;
     }
 
+    public void closeEntityManagerAndFactory() {
+        entityManager.close();
+        entityManagerFactory.close();
+    }
+
     @AroundInvoke
     public Object transactionInterceptor(InvocationContext context) throws Exception {
+        if(context.getMethod().getName().equals("createUser") || context.getMethod().getName().equals("deleteUser"))
+            return context.proceed();
+
         entityManager.getTransaction().begin();
+        System.out.println("Transaction begin " + context.getMethod().getName());
         try {
             return context.proceed();
         } finally {
             entityManager.getTransaction().commit();
+            System.out.println("Transaction commit " + context.getMethod().getName());
         }
-    }
-
-    public void closeEntityManagerAndFactory() {
-        entityManager.close();
-        entityManagerFactory.close();
     }
 }
