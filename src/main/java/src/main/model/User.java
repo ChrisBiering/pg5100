@@ -1,6 +1,8 @@
 package src.main.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 /**
  * Created by Chris on 05/10/15.
@@ -11,11 +13,16 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(length = 50)
+    @NotNull @Pattern(regexp = "^\\w+\\.?(\\w+)?@[A-Za-z]+\\.([A-Za-z]{2,3})?\\.?([A-Za-z]{2,3})?$")
     private String email;
+
     @Column(length = 20)
     private UserType userType;
+
     @Column(length = 100)
+    @NotNull @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{5,30}")
     private String password;
 
     public User(String email, String password, UserType userType) {
