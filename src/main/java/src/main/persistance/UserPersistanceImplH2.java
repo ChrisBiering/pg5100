@@ -4,7 +4,10 @@ import src.main.model.User;
 import src.main.model.UserType;
 import src.main.persistance.qualifier.H2;
 
+import javax.annotation.PreDestroy;
 import javax.inject.Inject;
+import javax.interceptor.AroundInvoke;
+import javax.interceptor.InvocationContext;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -19,51 +22,53 @@ import java.util.List;
 public class UserPersistanceImplH2 implements UserPersistence {
 
     private EntityManagerFactory entityManagerFactory;
+    private EntityManager entityManager;
 
     @Inject @H2
     public UserPersistanceImplH2() {
         entityManagerFactory = Persistence.createEntityManagerFactory("persistenceUnit");
+        entityManager = entityManagerFactory.createEntityManager();
+    }
+
+    @PreDestroy
+    public void tearDown() {
+        entityManager.close();
     }
 
     public User createUser(String email, String password, UserType userType) {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        entityManager.getTransaction().begin();
         User user = new User(email, password, userType);
         entityManager.persist(user);
-        entityManager.getTransaction().commit();
-        entityManager.close();
         return user;
     }
 
     public void updateUser(int userId, String newEmail) {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
         User user = entityManager.find(User.class, userId);
-        entityManager.getTransaction().begin();
         user.setEmail(newEmail);
-        entityManager.getTransaction().commit();
-        entityManager.close();
     }
 
     public User getUser(int userId) {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
         User user = entityManager.find(User.class, userId);
-        entityManager.close();
         return user;
     }
 
     @SuppressWarnings("unchecked")
     public List<User> getUsers() {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
         Query query = entityManager.createQuery("SELECT u FROM Users u");
         return (List<User>)query.getResultList();
     }
 
     public boolean deleteUser(int userId) {
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        entityManager.getTransaction().begin();
         entityManager.remove(entityManager.contains(getUser(userId)) ? getUser(userId) : entityManager.merge(getUser(userId)));
-        entityManager.getTransaction().commit();
-        entityManager.close();
         return getUser(userId) == null;
+    }
+
+    @AroundInvoke
+    public Object transactionInterceptor(InvocationContext context) throws Exception {
+        entityManager.getTransaction().begin();
+        try {
+            return context.proceed();
+        } finally {
+            entityManager.getTransaction().commit();
+        }
     }
 }
