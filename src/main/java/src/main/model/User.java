@@ -15,7 +15,7 @@ public class User {
     private Integer id;
 
     @Column(length = 50)
-    @NotNull @Pattern(regexp = "^\\w+\\.?(\\w+)?@[A-Za-z]+\\.([A-Za-z]{2,3})?\\.?([A-Za-z]{2,3})?$")
+    @NotNull @Pattern(regexp = "^\\w+\\.?(\\w+)?@\\w+\\.([A-Za-z]{2,3})?\\.?([A-Za-z]{2,3})?$")
     private String email;
 
     @Column(length = 20)

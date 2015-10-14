@@ -23,12 +23,13 @@ public class MainService {
     }
 
     private void callService() {
-        User user1 = persistanceImpl.createUser("email@main.com", "password", UserType.Student);
+        User user1 = persistanceImpl.createUser("email@main4.com", "Password1", UserType.Student);
 
         System.out.println("All users: ");
         for(User user : persistanceImpl.getUsers()) {
             System.out.println(user.toString());
         }
+
 
         System.out.println("\nUser info before email change: " + persistanceImpl.getUser(user1.getId()));
         System.out.println("Updating user email");
@@ -42,6 +43,7 @@ public class MainService {
         for(User user : persistanceImpl.getUsers()) {
             System.out.println(user.toString());
         }
+
     }
 
 
