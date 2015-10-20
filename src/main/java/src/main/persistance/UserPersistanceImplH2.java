@@ -71,7 +71,7 @@ public class UserPersistanceImplH2 implements UserPersistence {
         entityManager.close();
         entityManagerFactory.close();
     }
-
+/*
     @AroundInvoke
     public Object transactionInterceptor(InvocationContext context) throws Exception {
         if(context.getMethod().getName().equals("createUser") || context.getMethod().getName().equals("deleteUser"))
@@ -86,4 +86,5 @@ public class UserPersistanceImplH2 implements UserPersistence {
             System.out.println("Transaction commit " + context.getMethod().getName());
         }
     }
+    */
 }
